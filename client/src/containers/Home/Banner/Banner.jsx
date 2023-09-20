@@ -3,10 +3,14 @@ import Img from "./new.png"
 const Banner = () => {
   return (
    <>
-    <div className="container">
-      <div>Banner</div>
-      {/* <image src={Img} alt ="anytime"/> */}
-      <img src={Img} alt="anytime" style={{display: "flex", justifyContent: "center"}} />
+    <div className="">
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      }}>
+      <img src={Img} alt="anytime" style={{ width: "100%"}}/>
+      </div>
     </div>
    </>
   )
