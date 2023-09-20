@@ -19,7 +19,7 @@ const Contact = () => {
       </div>
  
       </div>  
-      <Button className="container" style={{border: "15px solid",width: "auto", display: "flex", justifyContent: "center"}}>Send</Button>
+      <Button className="container" style={{border: "15px solid", width: "auto", display: "flex", justifyContent: "center"}}>Send</Button>
     </div>
     </>
   )
