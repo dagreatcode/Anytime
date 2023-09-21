@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 const Contact = () => {
   return (
     <>    <div className="container jumbotron" style={{}}>
-    <div className="display-4" style={{textAlign: "center", margin: "30px"}}>About Us</div>
+    <div className="display-4" style={{textAlign: "center", margin: "30px"}}>Contact Us</div>
    
       <div className="row" style={{textAlign: "center"}}>
       <div className="">Contact</div>
