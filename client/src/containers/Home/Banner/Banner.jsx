@@ -1,9 +1,10 @@
 import Img from "./new.png"
+import './Banner.css'
 
 const Banner = () => {
   return (
    <>
-    <div className="">
+    <div>
     <div style={{
       display: 'flex',
       justifyContent: 'center',
