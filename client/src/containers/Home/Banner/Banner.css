@@ -1,6 +1,6 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    div img {
+    div img.hero {
         content: url("../Img/mobleNew.png");
     } 
 }
@@ -10,6 +10,10 @@
     /* .example{
         background-image: url("example2.jpg");
      } */
+
+     /* div img {
+        content: url("../Img/mobleNew.png");
+    }  */
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -17,9 +21,11 @@
     /* div img {
         display:none;
     } */
+
     /* div::before {
         content: url("new.png");
     } */
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */

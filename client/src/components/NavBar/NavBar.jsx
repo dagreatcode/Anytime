@@ -10,7 +10,7 @@ export default function NavBar() {
             {/* <!-- Logo Image --> */}
             <img src="./favicon.ico" alt="" width="30" height="24" />
             {/* <!-- Logo Text --> */}
-            <span className="text-uppercase font-weight-bold">Anytime</span>
+            <span className="text-uppercase font-weight-bold"></span>
           </Link>
           <button
             className="navbar-toggler"

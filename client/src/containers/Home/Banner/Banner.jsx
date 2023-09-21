@@ -10,7 +10,7 @@ const Banner = () => {
       justifyContent: 'center',
       alignItems: 'center',
       }}>
-      <img src={Img} alt="anytime" style={{ width: "100%"}}/>
+      <img className="hero" src={Img} alt="anytime" style={{ width: "100%"}}/>
       </div>
     </div>
    </>
