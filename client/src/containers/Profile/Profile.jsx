@@ -5,7 +5,7 @@ const Profile = () => {
   return (
     <>
       <div className="container jumbotron" style={{}}>
-        <div className="display-4" style={{textAlign: "center", margin: "30px"}}>Portfolio</div>
+        <div className="display-4" style={{textAlign: "center", margin: "30px"}}>Services</div>
         <Images style={{margin: "10%"}} />
       </div>
     </>
