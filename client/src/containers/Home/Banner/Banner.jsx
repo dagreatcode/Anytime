@@ -10,14 +10,14 @@ const Banner = () => {
           <div className="card-header">50% Off Discount Limited Time Offer</div>
           <div className="card-body">
             <img
-              classNameName="hero"
+              className="hero"
               src={Img}
               alt="anytime"
               style={{ width: "100%" }}
             />
             <a
               href="tel:(1)(7702120143)"
-              classNameName="btn btn-dark btn-sm"
+              className="btn btn-dark btn-sm"
               tabindex="-1"
               role="button"
               aria-disabled="true"
@@ -26,7 +26,7 @@ const Banner = () => {
             </a>
             <Link
               to="/Contact"
-              classNameName="btn btn-dark btn-sm"
+              className="btn btn-dark btn-sm"
               tabindex="-1"
               role="button"
               aria-disabled="true"
