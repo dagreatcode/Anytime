@@ -32,7 +32,7 @@ export default function NavBar() {
               </li>
               <li className="nav-item">
                 <NavLink id="gonav" to="/Profile" className="nav-link">
-                  Profile
+                  Service
                 </NavLink>
               </li>
               <li className="nav-item">
