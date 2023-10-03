@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <>
       <div class="card text-center">
-        <div class="card-header">50% Discount Off Limited Time</div>
+        <div class="card-header">50% Off Discount Limited Time Offer</div>
         <div class="card-body">
           <img
             className="hero"
