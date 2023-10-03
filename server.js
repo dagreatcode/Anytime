@@ -14,22 +14,20 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
 app.use(express.static("images"));
 mongoose.set("strictQuery", false);
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/Anytime_db",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    // family: 4,
-    // useCreateIndex: true,
-    // useFindAndModify: false,
-    // useNewUrlParser: !0,
-    // useUnifiedTopology: !0,
-    // useCreateIndex: !0,
-    // useFindAndModify: !1,
-  }
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Anytime_db", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  // family: 4,
+  // useCreateIndex: true,
+  // useFindAndModify: false,
+  // useNewUrlParser: !0,
+  // useUnifiedTopology: !0,
+  // useCreateIndex: !0,
+  // useFindAndModify: !1,
+});
 
 const connection = mongoose.connection;
 
