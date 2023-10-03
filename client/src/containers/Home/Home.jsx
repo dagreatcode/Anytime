@@ -6,9 +6,10 @@ const Home = () => {
   return (
     <>
       <Banner />
+      <div className="jumbotron" style={{textAlign: "center"}}>
       <div className="container">
         <div className="row">
-          <h1>Junk Removal & Hauling Services</h1>
+          <h1 class="display-4">Junk Removal & Hauling Services</h1>
         </div>
       </div>
       <br/>
@@ -16,7 +17,7 @@ const Home = () => {
       <br/>
       <div className="container">
         <div className="row">
-          <h1 className>
+          <h1 className="my-4">
             Our Services
           </h1>
         </div>
@@ -26,7 +27,7 @@ const Home = () => {
       <br/>
       <div className="container">
         <div className="row">
-          <h1>How It Works.</h1>
+          <h1 className="my-4">How It Works.</h1>
         </div>
       </div>
       <br/>
@@ -34,8 +35,9 @@ const Home = () => {
       <br/>
       <div className="container">
         <div className="row">
-          <h1>Local To You In Atlanta</h1>
+          <h1 className="lead">Local To You In Atlanta</h1>
         </div>
+      </div>
       </div>
       <br/>
       <br/>
