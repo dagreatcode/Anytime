@@ -4,7 +4,7 @@ import "./Banner.css";
 
 const Banner = () => {
   return (
-    <div className="card text-center">
+    <div className="card text-center"           style={{ backgroundColor: "#e1f2ea",}}>
       <div className="card-header">50% Off Discount Limited Time Offer</div>
       <div className="card-body">
         <img
@@ -15,16 +15,18 @@ const Banner = () => {
         />
         <a
           href="tel:(1)(7702120143)"
-          className="btn btn-dark btn-sm"
+          className="btn btn-lg"
+          style={{ backgroundColor: "#75ba43", width: "auto" }}
           tabindex="-1"
           role="button"
           aria-disabled="true"
         >
-          Call
+          Call Now
         </a>
         <Link
           to="/Contact"
-          className="btn btn-dark btn-sm"
+          className="btn btn-lg"
+          style={{ backgroundColor: "#75ba43", width: "auto" }}
           tabindex="-1"
           role="button"
           aria-disabled="true"
