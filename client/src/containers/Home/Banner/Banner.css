@@ -1,37 +1,65 @@
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    div img.hero {
-        content: url("../Img/mobleNew.png");
-    } 
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    /* .example{
-        background-image: url("example2.jpg");
-     } */
-
-     /* div img {
-        content: url("../Img/mobleNew.png");
-    }  */
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    /* div img {
-        display:none;
-    } */
-
-    /* div::before {
-        content: url("new.png");
-    } */
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+.banner {
+    margin: 20px 0;
+  }
+  
+  .card {
+    background-color: #e1f2ea;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .card-header {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 15px;
+    background-color: #d1e9d5; /* Slightly darker background for header */
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .hero {
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    color: white; /* Ensure text is readable */
+    transition: background-color 0.3s, transform 0.3s;
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Slightly rounded buttons */
+  }
+  
+  .btn:hover {
+    background-color: #68a033; /* Darker green on hover */
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin: 10px 0;
+  }
+  
+  .card-footer {
+    background-color: #f8f9fa; /* Light background for footer */
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #6c757d; /* Muted color for footer text */
+  }
+  

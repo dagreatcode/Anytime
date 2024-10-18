@@ -1,0 +1,22 @@
+.jumbotron {
+    background-color: #f8f9fa; /* Light background for jumbotron */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  }
+  
+  /* .container 
+    max-width: 600px; Limit the width for better readability */
+  
+  
+  h1 {
+    color: #25406b; /* Dark blue for the heading */
+  }
+  
+  .form-label {
+    font-weight: bold; /* Make labels bold */
+  }
+  
+  .btn {
+    border-radius: 5px; /* Rounded button corners */
+  }
+  

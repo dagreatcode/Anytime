@@ -1,18 +1,55 @@
-import React from 'react'
+import React from "react";
+import "./About.css"; // Assuming you'll create an About.css file for styles
 
 const About = () => {
-  return (<>
-    <div className="container jumbotron" style={{}}>
-      <div className="display-4" style={{textAlign: "center", margin: "30px"}}>About Us</div>
-      <p>
-        "Where does it come from?
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
-      </p>
-    </div>
-  </>
- 
-  )
-}
+  return (
+    <>
+      <div className="container my-5">
+        <h1 className="display-4 text-center mb-4">About Us</h1>
+        <div className="text-center mb-4">
+          <img src="./about-image.jpg" alt="About Us" className="about-image" />
+        </div>
+        <p className="lead text-justify">
+          At Anytime Junk Removal, we pride ourselves on providing fast,
+          reliable, and eco-friendly junk removal services. Our team is
+          dedicated to helping you reclaim your space, whether it's at home or
+          in the office.
+        </p>
+        <h2 className="my-4">Our Mission</h2>
+        <p>
+          Our mission is to make junk removal easy and stress-free for our
+          customers. We aim to provide top-notch service while maintaining a
+          commitment to sustainability by recycling and donating items whenever
+          possible.
+        </p>
 
-export default About
+        <h2 className="my-4">Why Choose Us?</h2>
+        <ul className="list-unstyled">
+          <li>✅ Fast and efficient service</li>
+          <li>✅ Eco-friendly disposal methods</li>
+          <li>✅ Transparent pricing with no hidden fees</li>
+          <li>✅ Friendly and professional team</li>
+        </ul>
+
+        <h2 className="my-4">Our History</h2>
+        <p>
+          "Where does it come from? Contrary to popular belief, Lorem Ipsum is
+          not simply random text. It has roots in a piece of classical Latin
+          literature from 45 BC, making it over 2000 years old. Richard
+          McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+          looked up one of the more obscure Latin words, consectetur, from a
+          Lorem Ipsum passage, and going through the cites of the word in
+          classical literature, discovered the undoubtable source."
+        </p>
+
+        <h2 className="my-4">Get in Touch</h2>
+        <p>
+          If you have any questions or would like to learn more about our
+          services, feel free to <a href="/Contact">contact us</a> today!
+        </p>
+      </div>
+    </>
+  );
+};
+
+export default About;

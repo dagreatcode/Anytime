@@ -1,0 +1,21 @@
+.service-images {
+  margin: 20px auto; /* Centering the images */
+  max-width: 100%; /* Responsive images */
+}
+
+.service-card {
+  background-color: #e1f2ea; /* Light background for service cards */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  margin-bottom: 20px; /* Spacing between cards */
+  text-align: center; /* Center the text in cards */
+}
+
+.service-card h3 {
+  color: #25406b; /* Dark blue for headings */
+}
+
+.lead {
+  font-size: 1.2rem; /* Slightly larger font for emphasis */
+}

@@ -1,10 +1,46 @@
-.footer {
-    bottom: 0;
-    position: fixed; 
-    left: 0 ; 
-    right: 0; 
-    /* bottom: 0;  */
-    max-width: var(--maxWidth);
-    /* margin-top: auto */
-    /* margin: 10%;   */
-}
+.mynav {
+    background-color: #75ba43; /* Keeping your green background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  #gonav {
+    color: #25406b; /* Dark blue text color */
+    font-weight: 500; /* Medium font weight */
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .nav-link {
+    color: #25406b; /* Using your dark blue for links */
+    font-weight: 500; /* Medium font weight */
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .nav-link:hover {
+    color: #fff; /* Change text color to white on hover */
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center; /* Center logo and text vertically */
+  }
+  
+  .navbar-toggler {
+    border: none; /* Remove border */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #fff; /* Custom color for toggler icon */
+  }
+  
+  /* Active link style */
+  .nav-link.active {
+    color: #fff; /* Change active link color to white */
+    font-weight: bold; /* Bold active link */
+  }
+  
+  /* Additional styles for card header if needed */
+  .card-header {
+    font-weight: bold;
+    padding: 15px;
+  }
+  

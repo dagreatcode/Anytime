@@ -1,7 +1,42 @@
 .mynav {
-  background-color: #75ba43;
+  background-color: #75ba43; /* Green background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-#gonav {
-  color: #25406b;
+.nav-link {
+  color: #25406b; /* Dark blue text color */
+  font-weight: 500; /* Medium font weight */
+  padding: 10px 15px; /* Added padding for better spacing */
+  transition: color 0.3s, background-color 0.3s; /* Smooth transition */
+  border-radius: 5px; /* Rounded corners on hover */
+}
+
+.nav-link:hover {
+  color: #fff; /* Change text color to white on hover */
+  background-color: rgba(37, 64, 107, 0.7); /* Darker background on hover */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center; /* Center logo and text vertically */
+}
+
+.navbar-toggler {
+  border: none; /* Remove border */
+}
+
+.navbar-toggler-icon {
+  background-color: #fff; /* Custom color for toggler icon */
+}
+
+/* Active link style */
+.nav-link.active {
+  color: #fff; /* Change active link color to white */
+  background-color: rgba(
+    37,
+    64,
+    107,
+    0.7
+  ); /* Darker background for active link */
+  font-weight: bold; /* Bold active link */
 }
