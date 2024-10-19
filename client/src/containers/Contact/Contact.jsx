@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import Button from "react-bootstrap/Button";
 import emailjs from "@emailjs/browser";
-import "./Contact.css"; // Create a CSS file for styles
+import styles from "./Contact.module.css"; // Import the CSS module
+import bree5 from "./Img/bree5.png"
 
 const Contact = () => {
   const form = useRef();
@@ -29,9 +30,21 @@ const Contact = () => {
   };
 
   return (
-    <div className="container my-5">
-      <h1 className="display-4 text-center mb-4">Contact Us</h1>
-      <form ref={form} onSubmit={handleSubmit} className="jumbotron p-4">
+    <div className={styles.container}>
+      <div className={styles.headerImage}>
+        <h1 className={styles.title}>Contact Us</h1>
+        <img 
+          src={bree5} // Use the path to your truck image
+          alt="Truck" 
+          className={styles.truck} 
+        />
+      </div>
+      <p className="lead text-center mb-4">
+        We’re here to help with all your junk removal needs. Whether you have
+        questions, need a quote, or want to schedule a pickup, feel free to
+        reach out to us!
+      </p>
+      <form ref={form} onSubmit={handleSubmit} className={`${styles.jumbotron} p-4`}>
         <div className="mb-3">
           <label htmlFor="user_name" className="form-label">
             Name
@@ -75,6 +88,10 @@ const Contact = () => {
           Send
         </Button>
       </form>
+      <p className="text-center mt-4">
+        Thank you for considering us for your junk removal needs. We look
+        forward to assisting you!
+      </p>
     </div>
   );
 };
