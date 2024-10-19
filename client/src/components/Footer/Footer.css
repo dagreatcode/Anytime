@@ -1,6 +1,7 @@
 .mynav {
-    background-color: #75ba43; /* Keeping your green background */
+    /* background-color: #75ba43; /* Keeping your green background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 0.5rem 1rem; /* Reduce vertical padding */
   }
   
   #gonav {
@@ -12,6 +13,7 @@
   .nav-link {
     color: #25406b; /* Using your dark blue for links */
     font-weight: 500; /* Medium font weight */
+    padding: 0.5rem 0.75rem; /* Reduce padding for links */
     transition: color 0.3s; /* Smooth color transition */
   }
   
@@ -22,25 +24,21 @@
   .navbar-brand {
     display: flex;
     align-items: center; /* Center logo and text vertically */
+    padding: 0; /* Remove extra padding */
   }
   
   .navbar-toggler {
     border: none; /* Remove border */
+    padding: 0.25rem; /* Reduce padding */
   }
   
   .navbar-toggler-icon {
     background-color: #fff; /* Custom color for toggler icon */
   }
   
-  /* Active link style */
   .nav-link.active {
     color: #fff; /* Change active link color to white */
     font-weight: bold; /* Bold active link */
   }
   
-  /* Additional styles for card header if needed */
-  .card-header {
-    font-weight: bold;
-    padding: 15px;
-  }
   

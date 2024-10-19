@@ -1,0 +1,123 @@
+.banner {
+  margin: 20px 0;
+}
+
+.card {
+  background-color: #e1f2ea;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.cardHeader {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 15px;
+  background-color: #d1e9d5; /* Slightly darker background for header */
+}
+
+.cardBody {
+  padding: 20px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: white; /* Ensure text is readable */
+  transition: background-color 0.3s, transform 0.3s;
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Slightly rounded buttons */
+  background-color: #75ba43; /* Green background */
+}
+
+.btn:hover {
+  background-color: #68a033; /* Darker green on hover */
+  transform: scale(1.05);
+}
+
+.cardTitle {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.cardText {
+  margin: 10px 0;
+}
+
+.cardFooter {
+  background-color: #f8f9fa; /* Light background for footer */
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #6c757d; /* Muted color for footer text */
+}
+
+.hero {
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  max-height: 400px; /* Set a maximum height */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Media Queries */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .hero {
+    content: url("../Img/Anytime_Banner.png");
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: 200px; /* Adjusted max height for mobile */
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .hero {
+    content: url("../Img/Anytime_Banner.png");
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: 300px; /* Adjusted max height for small devices */
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .hero {
+    content: url("../Img/Anytime_Banner.png");
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: 400px; /* Maintain this for medium devices */
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .hero {
+    content: url("../Img/Anytime_Banner.png");
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: 500px; /* Adjusted max height for larger devices */
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .hero {
+    content: url("../Img/Anytime_Banner.png");
+    height: auto;
+    margin: 0;
+    padding: 0;
+    max-height: 600px; /* Adjusted max height for extra large devices */
+  }
+}

@@ -1,50 +1,46 @@
 import { Link } from "react-router-dom";
 import Img from "./new.png";
-import "./Banner.css";
+import styles from "./Banner.module.css"; // Use CSS modules for scoped styles
 import { motion } from "framer-motion";
 
 const Banner = () => {
   return (
-    <div className="banner">
+    <div className={styles.banner}>
       <motion.div
-        className="card text-center"
-        style={{ backgroundColor: "#e1f2ea" }}
+        className={`card text-center ${styles.card}`}
         initial={{ scale: 0.9 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="card-header">50% Off Discount Limited Time Offer</div>
+        <div className={styles.cardHeader}>
+          50% Off Discount Limited Time Offer
+        </div>
 
-        <div className="card-body">
+        <div className={styles.cardBody}>
           <img
-            className="hero"
+            className={styles.hero}
             src={Img}
             alt="anytime"
             style={{ width: "100%", borderRadius: "10px" }}
           />
-          <div className="button-group">
+          <div className={styles.buttonGroup}>
             <a
               href="tel:(1)(7702120143)"
-              className="btn btn-lg"
-              style={{ backgroundColor: "#75ba43", width: "auto" }}
+              className={`btn btn-lg ${styles.btn}`}
             >
               Call Now
             </a>
-            <Link
-              to="/Contact"
-              className="btn btn-lg"
-              style={{ backgroundColor: "#75ba43", width: "auto" }}
-            >
+            <Link to="/Contact" className={`btn btn-lg ${styles.btn}`}>
               Appointment
             </Link>
           </div>
-          <h5 className="card-title mt-3">
+          <h5 className={styles.cardTitle}>
             Contact Us Anytime & We'll Be There In No Time.
           </h5>
-          <p className="card-text">Here is why you should choose us...</p>
+          <p className={styles.cardText}>Here is why you should choose us...</p>
         </div>
 
-        <div className="card-footer text-muted">
+        <div className={styles.cardFooter}>
           We Are Here When You Need Us 24/7.
         </div>
       </motion.div>

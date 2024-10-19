@@ -1,0 +1,50 @@
+.jumbotron {
+  background-color: #f8f9fa; /* Light background for the jumbotron */
+  padding: 2rem; /* Add some padding */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.card {
+  background-color: #ffffff; /* White background for the card */
+  border: 1px solid #dcdcdc; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling and shadow transition */
+  overflow: hidden; /* Ensures content stays within the card */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+/* Card body styles */
+.card-body {
+  padding: 15px; /* Padding inside the card */
+}
+
+.card-title {
+  color: #25406b; /* Dark blue color for titles */
+}
+
+.card-text {
+  color: #666; /* Gray color for text */
+}
+
+/* Additional animation styles for slide-in effect */
+.cardContainer {
+  opacity: 0; /* Start invisible for animation */
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Media queries for responsiveness can be added here */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .jumbotron {
+    padding: 20px 0; /* Reduce padding on smaller screens */
+  }
+
+  .display4 {
+    font-size: 2rem; /* Decrease title size for smaller screens */
+  }
+}

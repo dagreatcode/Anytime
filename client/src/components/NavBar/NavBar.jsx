@@ -4,7 +4,7 @@ import "./NavBar.css";
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg mynav">
+    <nav className="navbar navbar-expand-lg mynav shadow">
       <div className="container">
         <Link to="/" className="navbar-brand d-flex align-items-center">
           <img src="./favicon.ico" alt="Logo" width="30" height="24" />
