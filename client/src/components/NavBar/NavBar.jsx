@@ -9,7 +9,7 @@ export default function NavBar() {
         <Link to="/" className="navbar-brand d-flex align-items-center">
           <img src="./favicon.ico" alt="Logo" width="30" height="24" />
           <span className="ms-2 text-uppercase font-weight-bold">
-            Your Brand
+            Anytime
           </span>
         </Link>
         <button

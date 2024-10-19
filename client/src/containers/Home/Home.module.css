@@ -5,7 +5,7 @@
 }
 
 .card {
-  background-color: #ffffff; /* White background for the card */
+  background-color: #ecf5ed; /* White background for the card */
   border: 1px solid #dcdcdc; /* Light gray border */
   border-radius: 8px; /* Rounded corners */
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling and shadow transition */
@@ -34,6 +34,21 @@
 .cardContainer {
   opacity: 0; /* Start invisible for animation */
   transition: opacity 0.5s ease-in-out;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: white; /* Ensure text is readable */
+  transition: background-color 0.3s, transform 0.3s;
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Slightly rounded buttons */
+  background-color: #75bb43; /* Set to the desired green */
+}
+
+.btn:hover {
+  background-color: #68a033; /* Darker green on hover */
+  transform: scale(1.05);
 }
 
 /* Media queries for responsiveness can be added here */

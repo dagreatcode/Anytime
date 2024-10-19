@@ -1,13 +1,13 @@
 import React from "react";
 import "./About.css"; // Assuming you'll create an About.css file for styles
-
+import Img4 from "./Img/bree4.png"
 const About = () => {
   return (
     <>
       <div className="container my-5">
         <h1 className="display-4 text-center mb-4">About Us</h1>
         <div className="text-center mb-4">
-          <img src="./about-image.jpg" alt="About Us" className="about-image" />
+          <img src={Img4} alt="About Us" className="about-image" />
         </div>
         <p className="lead text-justify">
           At Anytime Junk Removal, we pride ourselves on providing fast,

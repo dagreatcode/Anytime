@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import Banner from "./Banner/Banner";
 import styles from "./Home.module.css"; // Import the CSS module
 import { motion } from "framer-motion";
+import Img1 from "./Img/bree1.jpg"
+import Img2 from "./Img/bree2.jpg"
+import Img3 from "./Img/bree3.jpg"
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,9 +58,18 @@ const Home = () => {
 
         <div className="row mt-4" ref={serviceRef}>
           {[
-            "Residential Junk Removal",
-            "Commercial Junk Removal",
-            "Construction Debris Removal",
+            {
+              name: "Residential Junk Removal",
+              image: `${Img1}`,
+            },
+            {
+              name: "Commercial Junk Removal",
+              image: `${Img2}`,
+            },
+            {
+              name: "Construction Debris Removal",
+              image: `${Img3}`,
+            },
           ].map((service, index) => (
             <motion.div
               className={`col-md-4 mb-4 ${styles.cardContainer}`}
@@ -68,16 +80,17 @@ const Home = () => {
             >
               <div className={styles.card}>
                 <img
-                  src={`path/to/${service.toLowerCase().replace(/ /g, "-")}.jpg`}
+                  src={service.image}
                   className={`${styles.cardImgTop} card-img-top`} // Use the new class for image
-                  alt={service}
+                  alt={service.name}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{service}</h5>
+                  <h5 className="card-title">{service.name}</h5>
                   <p className="card-text">
-                    Detailed description of {service} to inform potential customers about the service.
+                    Detailed description of {service.name} to inform potential
+                    customers about the service.
                   </p>
-                  <a href="/" className="btn btn-primary">
+                  <a href="/Service" className="btn btn-primary">
                     Learn More
                   </a>
                 </div>

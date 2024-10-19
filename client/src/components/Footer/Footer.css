@@ -41,4 +41,17 @@
     font-weight: bold; /* Bold active link */
   }
   
+  .social-links {
+    display: flex;
+    gap: 15px; /* Space out the icons */
+  }
   
+  .social-icon {
+    font-size: 1.5rem; /* Increase icon size for better tap target */
+    color: #75ba43; /* Change icon color to white */
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  .social-icon:hover {
+    color: #25406b; /* Change icon color on hover */
+  }
