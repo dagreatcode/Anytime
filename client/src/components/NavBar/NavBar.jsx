@@ -30,6 +30,7 @@ export default function NavBar() {
                 to="/About"
                 className="nav-link"
                 activeClassName="active"
+                style={{color: "#77b260"}}
               >
                 About
               </NavLink>
@@ -39,6 +40,7 @@ export default function NavBar() {
                 to="/Service"
                 className="nav-link"
                 activeClassName="active"
+                style={{color: "#77b260"}}
               >
                 Service
               </NavLink>
@@ -48,6 +50,7 @@ export default function NavBar() {
                 to="/Contact"
                 className="nav-link"
                 activeClassName="active"
+                style={{color: "#77b260"}}
               >
                 Contact
               </NavLink>

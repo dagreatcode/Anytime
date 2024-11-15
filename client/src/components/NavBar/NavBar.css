@@ -1,42 +1,68 @@
+/* Navbar Styles */
 .mynav {
-  /* background-color: #75ba43; /* Green background */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #24416b; /* Primary blue color */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+  padding: 0.8rem 0; /* Slight padding for better spacing */
 }
 
+/* Navbar links */
 .nav-link {
-  color: #25406b; /* Dark blue text color */
+  color: #ffffff; /* Set link text color to white for high contrast */
   font-weight: 500; /* Medium font weight */
-  padding: 10px 15px; /* Added padding for better spacing */
-  transition: color 0.3s, background-color 0.3s; /* Smooth transition */
-  border-radius: 5px; /* Rounded corners on hover */
+  padding: 12px 20px; /* Increased padding for better click area */
+  transition: color 0.3s, background-color 0.3s ease; /* Smooth transition */
+  border-radius: 5px; /* Rounded corners */
 }
 
 .nav-link:hover {
-  color: #fff; /* Change text color to white on hover */
-  background-color: rgba(37, 64, 107, 0.7); /* Darker background on hover */
+  color: #24416b; /* Change text color to blue on hover */
+  background-color: #77b260; /* Use soft green color for the background */
+  transform: translateY(-3px); /* Slight lift effect */
 }
 
+.nav-link.active {
+  color: #ffffff; /* White text for active link */
+  background-color: #77b260; /* Green background for active link */
+  font-weight: bold; /* Bold active link text */
+  transform: translateY(-3px); /* Lift effect for active state */
+}
+
+/* Navbar Brand */
 .navbar-brand {
   display: flex;
-  align-items: center; /* Center logo and text vertically */
+  align-items: center; /* Vertically align logo and text */
 }
 
+.navbar-brand img {
+  width: 30px;
+  height: 24px;
+}
+
+.navbar-brand span {
+  color: #77b260; /* Soft green for brand name */
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-left: 8px; /* Space between logo and text */
+}
+
+/* Navbar Toggler */
 .navbar-toggler {
-  border: none; /* Remove border */
+  border: none; /* Remove border for the toggler */
 }
 
 .navbar-toggler-icon {
-  background-color: #fff; /* Custom color for toggler icon */
+  background-color: #ffffff; /* White color for the toggler icon */
 }
 
-/* Active link style */
-.nav-link.active {
-  color: #fff; /* Change active link color to white */
-  background-color: rgba(
-    37,
-    64,
-    107,
-    0.7
-  ); /* Darker background for active link */
-  font-weight: bold; /* Bold active link */
+/* Active link style (in case React Router doesn't add active class correctly) */
+.navbar-nav .nav-link.active {
+  background-color: #77b260; /* Green for active links */
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-toggler-icon {
+    background-color: #24416b; /* Toggler icon color change on small screens */
+  }
 }
