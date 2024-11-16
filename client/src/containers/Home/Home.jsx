@@ -148,7 +148,7 @@ const Home = () => {
       <div className={`${styles.overImageContainer} position-relative`}>
         <img
           src={OverImage}
-          alt="Over Image"
+          alt="Over Im"
           className={`${styles.overImage} w-100`}
         />
         <div
