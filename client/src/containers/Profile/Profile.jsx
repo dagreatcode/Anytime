@@ -52,6 +52,72 @@ const Profile = () => {
             </div>
           </div>
         </div>
+        {/* Service Details Section */}
+        <h2 className="section-subtitle my-4">Service Details</h2>
+        <div className="row">
+          {/* Service Card 1 */}
+          <div className="col-md-4">
+            <div className="service-card">
+              <h3>Residential Junk Removal</h3>
+              <p>
+                We help you declutter your home, from old furniture to yard waste. Our services are fast, friendly, and affordable.
+              </p>
+            </div>
+          </div>
+
+          {/* Service Card 2 */}
+          <div className="col-md-4">
+            <div className="service-card">
+              <h3>Commercial Junk Removal</h3>
+              <p>
+                Efficient junk removal services for offices, retail spaces, and construction sites. We ensure minimal disruption to your business operations.
+              </p>
+            </div>
+          </div>
+
+          {/* Service Card 3 */}
+          <div className="col-md-4">
+            <div className="service-card">
+              <h3>Eco-Friendly Disposal</h3>
+              <p>
+                We prioritize recycling and donating items whenever possible to reduce waste and help the community.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* Service Details Section */}
+        <h2 className="section-subtitle my-4">Service Details</h2>
+        <div className="row">
+          {/* Service Card 1 */}
+          <div className="col-md-4">
+            <div className="service-card">
+              <h3>Residential Junk Removal</h3>
+              <p>
+                We help you declutter your home, from old furniture to yard waste. Our services are fast, friendly, and affordable.
+              </p>
+            </div>
+          </div>
+
+          {/* Service Card 2 */}
+          <div className="col-md-4">
+            <div className="service-card">
+              <h3>Commercial Junk Removal</h3>
+              <p>
+                Efficient junk removal services for offices, retail spaces, and construction sites. We ensure minimal disruption to your business operations.
+              </p>
+            </div>
+          </div>
+
+          {/* Service Card 3 */}
+          <div className="col-md-4">
+            <div className="service-card">
+              <h3>Eco-Friendly Disposal</h3>
+              <p>
+                We prioritize recycling and donating items whenever possible to reduce waste and help the community.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

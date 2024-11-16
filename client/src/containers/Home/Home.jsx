@@ -8,6 +8,9 @@ import Img3 from "./Img/bree3.jpg";
 import Img4 from "./Img/bree4.jpg";
 import OverImage from "./Img/mainImage.jpg";
 import Img6 from "./Img/bottomImage.jpg";
+import Img7 from "./Img/recycling.jpg";
+import Img8 from "./Img/dim.jpg";
+import Img9 from "./Img/junkcar.jpeg";
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -180,6 +183,9 @@ const Home = () => {
             { name: "Residential Junk Removal", image: Img1 },
             { name: "Commercial Junk Removal", image: Img2 },
             { name: "Construction Debris Removal", image: Img3 },
+            { name: "Recycling", image: Img7 },
+            { name: "Dimolition", image: Img8 },
+            { name: "Junk Car Removal", image: Img9 },
             { name: "Loved Ones' Estate Junk Removal", image: Img4 },
           ].map((service, index) => (
             <motion.div
