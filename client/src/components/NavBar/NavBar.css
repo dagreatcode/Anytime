@@ -10,13 +10,13 @@
   color: #ffffff; /* Set link text color to white for high contrast */
   font-weight: 500; /* Medium font weight */
   padding: 12px 20px; /* Increased padding for better click area */
-  transition: color 0.3s, background-color 0.3s ease; /* Smooth transition */
+  transition: color 0.3s, background-color 0.3s ease, transform 0.3s; /* Smooth transition */
   border-radius: 5px; /* Rounded corners */
 }
 
 .nav-link:hover {
   color: #24416b; /* Change text color to blue on hover */
-  background-color: #77b260; /* Use soft green color for the background */
+  background-color: #77b260; /* Soft green background on hover */
   transform: translateY(-3px); /* Slight lift effect */
 }
 
@@ -54,10 +54,11 @@
   background-color: #ffffff; /* White color for the toggler icon */
 }
 
-/* Active link style (in case React Router doesn't add active class correctly) */
+/* Active link style */
 .navbar-nav .nav-link.active {
   background-color: #77b260; /* Green for active links */
   font-weight: bold;
+  transform: translateY(-3px); /* Lift effect for active state */
 }
 
 /* Responsive Styles */
@@ -65,4 +66,20 @@
   .navbar-toggler-icon {
     background-color: #24416b; /* Toggler icon color change on small screens */
   }
+
+  /* Styling for the collapsed menu */
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.1rem; /* Increase font size on mobile */
+    padding: 12px; /* Adjust padding for mobile */
+  }
+}
+
+/* Navbar focus styles for accessibility */
+.nav-link:focus {
+  outline: 2px solid #77b260; /* Green outline on focus for accessibility */
+  outline-offset: 4px;
 }

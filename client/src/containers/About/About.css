@@ -1,33 +1,97 @@
-.about-image {
-  width: 100%;
-  max-width: 600px; /* Limit the image size */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+/* General About Page Styling */
+.about-container {
+  background-color: #f7f7f7; /* Light background for contrast */
+  padding: 60px 0; /* Add vertical padding for spacing */
 }
 
 .container {
-  padding: 30px; /* Add some padding */
-   /* background-color: #25406b;  /* Dark blue color for headings */
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-h1,
-h2 {
-  color: #25406b; /* Dark blue color for headings */
+/* Heading Styles */
+h1 {
+  color: #24416b; /* Deep blue color */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
+h2.section-title {
+  color: #24416b;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 40px;
+  border-bottom: 2px solid #77b260; /* Green accent underline */
+  padding-bottom: 10px;
+}
+
+/* Paragraph Text */
 .lead {
-  font-size: 1.2rem; /* Slightly larger font for emphasis */
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-ul {
-  margin-top: 10px; /* Spacing for lists */
+/* About Image Styling */
+.about-image {
+  width: 100%;
+  max-width: 700px; /* Limit image size */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  transition: transform 0.3s ease-in-out;
 }
 
+.about-image:hover {
+  transform: scale(1.05); /* Image hover effect */
+}
+
+/* Why Choose Us Section */
+ul.list-unstyled {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #555;
+}
+
+.check-icon {
+  color: #77b260; /* Green color for the check icon */
+  margin-right: 10px;
+}
+
+/* Link Styles */
 a {
-  color: #75ba43; /* Link color */
-  text-decoration: none; /* Remove underline */
+  color: #77b260; /* Soft green for links */
+  text-decoration: none;
+  font-weight: 600;
 }
 
 a:hover {
-  text-decoration: underline; /* Underline on hover for better UX */
+  text-decoration: underline; /* Underline link on hover */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2.section-title {
+    font-size: 1.75rem;
+  }
+
+  .about-image {
+    max-width: 100%;
+  }
+
+  .container {
+    padding: 0 15px; /* Padding for mobile view */
+  }
 }

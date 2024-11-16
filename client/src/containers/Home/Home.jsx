@@ -45,13 +45,32 @@ const Home = () => {
       setIsLoading(true);
       try {
         // Fetch reviews from multiple sources
-        const [googleReviews, yelpReviews, trustpilotReviews, facebookReviews, reviewtrackersReviews, bbbReviews] = await Promise.all([
-          fetch("http://localhost:3001/api/reviews/google").then(res => res.json()),
-          fetch("http://localhost:3001/api/reviews/yelp").then(res => res.json()),
-          fetch("http://localhost:3001/api/reviews/trustpilot").then(res => res.json()),
-          fetch("http://localhost:3001/api/reviews/facebook").then(res => res.json()),
-          fetch("http://localhost:3001/api/reviews/reviewtrackers").then(res => res.json()),
-          fetch("http://localhost:3001/api/reviews/bbb").then(res => res.json()),
+        const [
+          googleReviews,
+          yelpReviews,
+          trustpilotReviews,
+          facebookReviews,
+          reviewtrackersReviews,
+          bbbReviews,
+        ] = await Promise.all([
+          fetch("http://localhost:3001/api/reviews/google").then((res) =>
+            res.json()
+          ),
+          fetch("http://localhost:3001/api/reviews/yelp").then((res) =>
+            res.json()
+          ),
+          fetch("http://localhost:3001/api/reviews/trustpilot").then((res) =>
+            res.json()
+          ),
+          fetch("http://localhost:3001/api/reviews/facebook").then((res) =>
+            res.json()
+          ),
+          fetch("http://localhost:3001/api/reviews/reviewtrackers").then(
+            (res) => res.json()
+          ),
+          fetch("http://localhost:3001/api/reviews/bbb").then((res) =>
+            res.json()
+          ),
         ]);
 
         // Combine all reviews into one array
@@ -106,12 +125,21 @@ const Home = () => {
               className="lead"
             >
               Hassle-free junk removal at your convenience. We take care of it
-              all, so you don't have to! Whether it's clearing out your home, office, or construction site, we've got you covered.
+              all, so you don't have to! Whether it's clearing out your home,
+              office, or construction site, we've got you covered.
             </motion.p>
             <p className="lead">
-              No job is too big or small for our experienced team. We offer eco-friendly disposal, quick and reliable service, and unbeatable rates.
+              No job is too big or small for our experienced team. We offer
+              eco-friendly disposal, quick and reliable service, and unbeatable
+              rates.
             </p>
-            <a href="/Service" style={{backgroundColor: "#f0522d"}} className="btn btn-primary">Ready?</a>
+            <a
+              href="/Service"
+              style={{ backgroundColor: "#f0522d" }}
+              className="btn btn-primary"
+            >
+              Ready?
+            </a>
           </motion.div>
         </div>
       </div>
@@ -123,10 +151,17 @@ const Home = () => {
           alt="Over Image"
           className={`${styles.overImage} w-100`}
         />
-        <div className={`${styles.overlayContent} position-absolute top-50 start-50 translate-middle`}>
+        <div
+          className={`${styles.overlayContent} position-absolute top-50 start-50 translate-middle`}
+        >
           <h2 className="text-white">When are you free to start?</h2>
-          <p className="text-white">Fast and easy junk removal at affordable prices. We handle the mess, you get back to living!</p>
-          <a href="/Contact" className={`${styles.btn} btn btn-primary`}>Contact Us Now</a>
+          <p className="text-white">
+            Fast and easy junk removal at affordable prices. We handle the mess,
+            you get back to living!
+          </p>
+          <a href="/Contact" className={`${styles.btn} btn btn-primary`}>
+            Contact Us Now
+          </a>
         </div>
       </div>
 
@@ -141,7 +176,12 @@ const Home = () => {
           Our Services
         </motion.h1>
         <div className="row mt-4" ref={serviceRef}>
-          {[{ name: "Residential Junk Removal", image: Img1 }, { name: "Commercial Junk Removal", image: Img2 }, { name: "Construction Debris Removal", image: Img3 }, { name: "Loved Ones' Estate Junk Removal", image: Img4 }].map((service, index) => (
+          {[
+            { name: "Residential Junk Removal", image: Img1 },
+            { name: "Commercial Junk Removal", image: Img2 },
+            { name: "Construction Debris Removal", image: Img3 },
+            { name: "Loved Ones' Estate Junk Removal", image: Img4 },
+          ].map((service, index) => (
             <motion.div
               className={`col-md-4 mb-4 ${styles.cardContainer}`}
               key={index}
@@ -160,7 +200,8 @@ const Home = () => {
                   <p className="card-text">
                     Need junk removed? Our {service.name} service is fast,
                     efficient, and affordable. Let us do the heavy lifting for
-                    you! We specialize in clearing out homes, offices, and job sites with the utmost care.
+                    you! We specialize in clearing out homes, offices, and job
+                    sites with the utmost care.
                   </p>
                   <motion.a
                     href="/Service"
@@ -187,19 +228,37 @@ const Home = () => {
       </motion.h1>
       <div className="container my-5">
         <p>
-          At our junk removal service, we pride ourselves on offering a variety of solutions tailored to your specific needs. From large estate cleanouts to small residential pickups, our team is equipped to handle any junk removal job. We understand the importance of clearing out space in your life, whether it's to declutter, remodel, or simply get rid of old items you no longer need.
+          At our junk removal service, we pride ourselves on offering a variety
+          of solutions tailored to your specific needs. From large estate
+          cleanouts to small residential pickups, our team is equipped to handle
+          any junk removal job. We understand the importance of clearing out
+          space in your life, whether it's to declutter, remodel, or simply get
+          rid of old items you no longer need.
         </p>
         <p>
           Our services include:
           <ul>
-            <li>Home Junk Removal: Declutter your living space quickly and easily.</li>
-            <li>Office Junk Removal: Clear out unwanted office furniture and equipment.</li>
-            <li>Construction Debris Removal: We handle heavy debris removal, saving you time and hassle.</li>
-            <li>Estate Junk Removal: Respectful and efficient handling of personal items from estates.</li>
+            <li>
+              Home Junk Removal: Declutter your living space quickly and easily.
+            </li>
+            <li>
+              Office Junk Removal: Clear out unwanted office furniture and
+              equipment.
+            </li>
+            <li>
+              Construction Debris Removal: We handle heavy debris removal,
+              saving you time and hassle.
+            </li>
+            <li>
+              Estate Junk Removal: Respectful and efficient handling of personal
+              items from estates.
+            </li>
           </ul>
         </p>
         <p>
-          We pride ourselves on eco-friendly disposal practices, ensuring that as much of the junk we collect is recycled or donated. We aim to minimize the environmental impact of our work.
+          We pride ourselves on eco-friendly disposal practices, ensuring that
+          as much of the junk we collect is recycled or donated. We aim to
+          minimize the environmental impact of our work.
         </p>
       </div>
 
@@ -211,7 +270,7 @@ const Home = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1 }}
-          alt="Main Junk Removal Image"
+          alt="Main Junk Removal"
         />
       </div>
 
@@ -243,7 +302,9 @@ const Home = () => {
                     <p className="card-text">{review.text}</p>
                     <div className="d-flex justify-content-between">
                       <span>Rating: {review.rating}</span>
-                      <span>{new Date(review.time * 1000).toLocaleDateString()}</span>
+                      <span>
+                        {new Date(review.time * 1000).toLocaleDateString()}
+                      </span>
                     </div>
                   </div>
                 </div>

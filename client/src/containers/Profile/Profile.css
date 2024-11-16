@@ -1,21 +1,110 @@
-.service-images {
-  margin: 20px auto; /* Centering the images */
-  max-width: 100%; /* Responsive images */
+/* General Page Styling */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
+.section-title {
+  color: #24416b; /* Deep blue for section titles */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-subtitle {
+  color: #77b260; /* Soft green for subtitles */
+  font-size: 1.75rem;
+  font-weight: 600;
+  border-bottom: 2px solid #77b260; /* Green accent underline */
+  padding-bottom: 10px;
+}
+
+/* Intro Text */
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Service Cards */
 .service-card {
-  background-color: #e1f2ea; /* Light background for service cards */
-  border-radius: 10px; /* Rounded corners */
+  background-color: #fff;
+  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-  margin-bottom: 20px; /* Spacing between cards */
-  text-align: center; /* Center the text in cards */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  text-align: center;
+  height: 100%;
 }
 
 .service-card h3 {
-  color: #25406b; /* Dark blue for headings */
+  color: #24416b; /* Title color */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-.lead {
-  font-size: 1.2rem; /* Slightly larger font for emphasis */
+.service-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.service-card:hover {
+  transform: translateY(-10px); /* Slight lift effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Larger shadow on hover */
+}
+
+/* Service Images */
+.service-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.service-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow around images */
+  transition: transform 0.3s ease;
+}
+
+.service-images img:hover {
+  transform: scale(1.05); /* Scale image slightly on hover */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .service-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .service-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
 }

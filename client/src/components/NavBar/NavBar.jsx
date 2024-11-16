@@ -8,9 +8,7 @@ export default function NavBar() {
       <div className="container">
         <Link to="/" className="navbar-brand d-flex align-items-center">
           <img src="./favicon.ico" alt="Logo" width="30" height="24" />
-          <span className="ms-2 text-uppercase font-weight-bold">
-            Anytime
-          </span>
+          <span className="ms-2 text-uppercase font-weight-bold">Anytime</span>
         </Link>
         <button
           className="navbar-toggler"
@@ -28,9 +26,11 @@ export default function NavBar() {
             <li className="nav-item">
               <NavLink
                 to="/About"
-                className="nav-link"
-                activeClassName="active"
-                style={{color: "#77b260"}}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                style={{ color: "#77b260" }}
+                aria-label="About us page"
               >
                 About
               </NavLink>
@@ -38,9 +38,11 @@ export default function NavBar() {
             <li className="nav-item">
               <NavLink
                 to="/Service"
-                className="nav-link"
-                activeClassName="active"
-                style={{color: "#77b260"}}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                style={{ color: "#77b260" }}
+                aria-label="Our services page"
               >
                 Service
               </NavLink>
@@ -48,9 +50,11 @@ export default function NavBar() {
             <li className="nav-item">
               <NavLink
                 to="/Contact"
-                className="nav-link"
-                activeClassName="active"
-                style={{color: "#77b260"}}
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                style={{ color: "#77b260" }}
+                aria-label="Contact page"
               >
                 Contact
               </NavLink>
