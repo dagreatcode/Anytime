@@ -1,6 +1,9 @@
 import React from "react";
 import "./About.css"; // Assuming you'll create an About.css file for styles
 import Img4 from "./Img/bree4.jpg"; // Image for about section
+import Img5 from "./Img/b4.jpg"; // Image for about section
+import Img6 from "./Img/aT.jpg"; // Image for about section
+
 import { FaCheckCircle } from "react-icons/fa"; // Icon for the "Why Choose Us?" section
 
 const About = () => {
@@ -23,6 +26,10 @@ const About = () => {
         {/* Our Mission Section */}
         <section>
           <h2 className="section-title">Our Mission</h2>
+          <div className="text-center mb-4">
+          <img src={Img5} alt="About Us" className="about-image" />
+          <img src={Img6} alt="About Us" className="about-image" />          
+        </div>
           <p>
             Our mission is to make junk removal easy and stress-free for our customers. We aim to provide top-notch service while maintaining a commitment to sustainability by recycling and donating items whenever possible.
           </p>
