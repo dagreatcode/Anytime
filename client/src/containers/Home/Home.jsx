@@ -68,12 +68,10 @@ const Home = () => {
           fetch(`${process.env.URL}/api/reviews/facebook`).then((res) =>
             res.json()
           ),
-          fetch(`${process.env.URL}/api/reviews/reviewtrackers`).then(
-            (res) => res.json()
-          ),
-          fetch(`${process.env.URL}/api/reviews/bbb`).then((res) =>
+          fetch(`${process.env.URL}/api/reviews/reviewtrackers`).then((res) =>
             res.json()
           ),
+          fetch(`${process.env.URL}/api/reviews/bbb`).then((res) => res.json()),
         ]);
 
         // Combine all reviews into one array
