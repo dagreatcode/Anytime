@@ -21,6 +21,11 @@ if (process.env.NODE_ENV === "production") {
 // Serve static images
 app.use(express.static("images"));
 
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
+});
+
 // MongoDB Connection
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Anytime_db", {
@@ -49,7 +54,7 @@ app.get("/api/reviews/reviewtrackers", async (req, res) => {
     const response = await axios.get(url);
     res.json(response.data.reviews || []); // Send reviews in response
   } catch (error) {
-    console.error("Error fetching ReviewTrackers reviews:", error);
+    console.error("Error fetching ReviewTrackers reviews:", error.message);
     res.status(500).send("Error fetching reviews.");
   }
 });
@@ -65,7 +70,7 @@ app.get("/api/reviews/google", async (req, res) => {
     const response = await axios.get(url);
     res.json(response.data.result.reviews || []);
   } catch (error) {
-    console.error("Error fetching Google reviews:", error);
+    console.error("Error fetching Google reviews:", error.message);
     res.status(500).send("Error fetching reviews.");
   }
 });
@@ -85,7 +90,7 @@ app.get("/api/reviews/yelp", async (req, res) => {
     });
     res.json(response.data.reviews || []);
   } catch (error) {
-    console.error("Error fetching Yelp reviews:", error);
+    console.error("Error fetching Yelp reviews:", error.message);
     res.status(500).send("Error fetching reviews.");
   }
 });
@@ -105,7 +110,7 @@ app.get("/api/reviews/trustpilot", async (req, res) => {
     });
     res.json(response.data.reviews || []);
   } catch (error) {
-    console.error("Error fetching Trustpilot reviews:", error);
+    console.error("Error fetching Trustpilot reviews:", error.message);
     res.status(500).send("Error fetching reviews.");
   }
 });
@@ -121,7 +126,7 @@ app.get("/api/reviews/facebook", async (req, res) => {
     const response = await axios.get(url);
     res.json(response.data.data || []);
   } catch (error) {
-    console.error("Error fetching Facebook reviews:", error);
+    console.error("Error fetching Facebook reviews:", error.message);
     res.status(500).send("Error fetching reviews.");
   }
 });
@@ -137,7 +142,7 @@ app.get("/api/reviews/bbb", async (req, res) => {
     const response = await axios.get(url);
     res.json(response.data.reviews || []);
   } catch (error) {
-    console.error("Error fetching BBB reviews:", error);
+    console.error("Error fetching BBB reviews:", error.message);
     res.status(500).send("Error fetching reviews.");
   }
 });
