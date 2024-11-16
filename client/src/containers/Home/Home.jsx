@@ -8,7 +8,6 @@ import Img3 from "./Img/bree3.jpg";
 import Img4 from "./Img/bree4.jpg";
 import OverImage from "./Img/mainImage.jpg";
 import Img6 from "./Img/bottomImage.jpg";
-// import OverImage from "./Img/overImage.jpg"; // Assuming this is your over image
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -40,22 +39,38 @@ const Home = () => {
     };
   }, []);
 
-  // Fetch Google Reviews
+  // Fetch reviews from multiple APIs
   useEffect(() => {
-    const fetchGoogleReviews = async () => {
+    const fetchReviews = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("http://localhost:3001/api/reviews");
-        const data = await response.json();
-        setReviews(data);
+        // Fetch reviews from multiple sources
+        const [googleReviews, yelpReviews, trustpilotReviews, facebookReviews, reviewtrackersReviews, bbbReviews] = await Promise.all([
+          fetch("http://localhost:3001/api/reviews/google").then(res => res.json()),
+          fetch("http://localhost:3001/api/reviews/yelp").then(res => res.json()),
+          fetch("http://localhost:3001/api/reviews/trustpilot").then(res => res.json()),
+          fetch("http://localhost:3001/api/reviews/facebook").then(res => res.json()),
+          fetch("http://localhost:3001/api/reviews/reviewtrackers").then(res => res.json()),
+          fetch("http://localhost:3001/api/reviews/bbb").then(res => res.json()),
+        ]);
+
+        // Combine all reviews into one array
+        setReviews([
+          ...googleReviews,
+          ...yelpReviews,
+          ...trustpilotReviews,
+          ...facebookReviews,
+          ...reviewtrackersReviews,
+          ...bbbReviews,
+        ]);
       } catch (error) {
-        console.error("Error fetching Google reviews:", error);
+        console.error("Error fetching reviews:", error);
       } finally {
         setIsLoading(false);
       }
     };
 
-    fetchGoogleReviews();
+    fetchReviews();
   }, []);
 
   // Fetch Google Maps Embed URL
@@ -91,8 +106,12 @@ const Home = () => {
               className="lead"
             >
               Hassle-free junk removal at your convenience. We take care of it
-              all, so you don't have to!
+              all, so you don't have to! Whether it's clearing out your home, office, or construction site, we've got you covered.
             </motion.p>
+            <p className="lead">
+              No job is too big or small for our experienced team. We offer eco-friendly disposal, quick and reliable service, and unbeatable rates.
+            </p>
+            <a href="/Service" style={{backgroundColor: "#f0522d"}} className="btn btn-primary">Ready?</a>
           </motion.div>
         </div>
       </div>
@@ -105,25 +124,11 @@ const Home = () => {
           className={`${styles.overImage} w-100`}
         />
         <div className={`${styles.overlayContent} position-absolute top-50 start-50 translate-middle`}>
-          <h2 className="text-white">Get Rid of Your Junk Today!</h2>
-          <p className="text-white">Fast and easy junk removal at affordable prices.</p>
-          <a href="/Service" className={`${styles.btn} btn btn-primary`}>
-            Get Started
-          </a>
+          <h2 className="text-white">When are you free to start?</h2>
+          <p className="text-white">Fast and easy junk removal at affordable prices. We handle the mess, you get back to living!</p>
+          <a href="/Contact" className={`${styles.btn} btn btn-primary`}>Contact Us Now</a>
         </div>
       </div>
-
-      {/* Main Image */}
-      {/* <div>
-        <motion.img
-          src={Img5}
-          className={`${styles.cardImgTop} card-img-top`}
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1 }}
-          alt="Main Junk Removal Image"
-        />
-      </div> */}
 
       {/* Services Section */}
       <div className="container my-5">
@@ -155,7 +160,7 @@ const Home = () => {
                   <p className="card-text">
                     Need junk removed? Our {service.name} service is fast,
                     efficient, and affordable. Let us do the heavy lifting for
-                    you!
+                    you! We specialize in clearing out homes, offices, and job sites with the utmost care.
                   </p>
                   <motion.a
                     href="/Service"
@@ -169,6 +174,45 @@ const Home = () => {
             </motion.div>
           ))}
         </div>
+      </div>
+
+      {/* What We Do Section */}
+      <motion.h1
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className={styles.sectionTitle}
+      >
+        What We Do
+      </motion.h1>
+      <div className="container my-5">
+        <p>
+          At our junk removal service, we pride ourselves on offering a variety of solutions tailored to your specific needs. From large estate cleanouts to small residential pickups, our team is equipped to handle any junk removal job. We understand the importance of clearing out space in your life, whether it's to declutter, remodel, or simply get rid of old items you no longer need.
+        </p>
+        <p>
+          Our services include:
+          <ul>
+            <li>Home Junk Removal: Declutter your living space quickly and easily.</li>
+            <li>Office Junk Removal: Clear out unwanted office furniture and equipment.</li>
+            <li>Construction Debris Removal: We handle heavy debris removal, saving you time and hassle.</li>
+            <li>Estate Junk Removal: Respectful and efficient handling of personal items from estates.</li>
+          </ul>
+        </p>
+        <p>
+          We pride ourselves on eco-friendly disposal practices, ensuring that as much of the junk we collect is recycled or donated. We aim to minimize the environmental impact of our work.
+        </p>
+      </div>
+
+      {/* Main Image */}
+      <div>
+        <motion.img
+          src={Img6}
+          className={`${styles.cardImgTop} card-img-top`}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1 }}
+          alt="Main Junk Removal Image"
+        />
       </div>
 
       {/* Reviews Section */}

@@ -33,7 +33,7 @@
   transition: background-color 0.3s, transform 0.3s;
   border: none; /* Remove default border */
   border-radius: 5px; /* Slightly rounded buttons */
-  background-color: #75ba43; /* Green background */
+  background-color: #f0522d; /* Green background */
 }
 
 .btn:hover {

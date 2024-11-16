@@ -4,6 +4,11 @@
   padding: 4rem 2rem; /* Increased padding for better spacing */
   border-radius: 15px; /* Larger rounded corners */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* More prominent shadow for elevation */
+  display: flex; /* Flexbox for centering */
+  flex-direction: column; /* Stack the content vertically */
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  text-align: center; /* Ensure text is centered */
 }
 
 .sectionTitle {
