@@ -6,13 +6,18 @@ import Img1 from "./Img/bree1.jpg";
 import Img2 from "./Img/bree2.jpg";
 import Img3 from "./Img/bree3.jpg";
 import Img4 from "./Img/bree4.jpg";
-import Img5 from "./Img/mainImage.jpg";
+import OverImage from "./Img/mainImage.jpg";
 import Img6 from "./Img/bottomImage.jpg";
+// import OverImage from "./Img/overImage.jpg"; // Assuming this is your over image
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   const serviceRef = useRef(null);
+  const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [mapUrl, setMapUrl] = useState("");
 
+  // Intersection Observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -23,7 +28,7 @@ const Home = () => {
       });
     });
 
-    const currentRef = serviceRef.current; // Store the current ref in a variable
+    const currentRef = serviceRef.current;
     if (currentRef) {
       observer.observe(currentRef);
     }
@@ -33,6 +38,39 @@ const Home = () => {
         observer.unobserve(currentRef);
       }
     };
+  }, []);
+
+  // Fetch Google Reviews
+  useEffect(() => {
+    const fetchGoogleReviews = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch("http://localhost:3001/api/reviews");
+        const data = await response.json();
+        setReviews(data);
+      } catch (error) {
+        console.error("Error fetching Google reviews:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchGoogleReviews();
+  }, []);
+
+  // Fetch Google Maps Embed URL
+  useEffect(() => {
+    const fetchMapUrl = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/api/map");
+        const data = await response.json();
+        setMapUrl(data.googleMapsLink); // Set the map iframe URL
+      } catch (error) {
+        console.error("Error fetching Google Map:", error);
+      }
+    };
+
+    fetchMapUrl();
   }, []);
 
   return (
@@ -59,6 +97,35 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Over Image Section */}
+      <div className={`${styles.overImageContainer} position-relative`}>
+        <img
+          src={OverImage}
+          alt="Over Image"
+          className={`${styles.overImage} w-100`}
+        />
+        <div className={`${styles.overlayContent} position-absolute top-50 start-50 translate-middle`}>
+          <h2 className="text-white">Get Rid of Your Junk Today!</h2>
+          <p className="text-white">Fast and easy junk removal at affordable prices.</p>
+          <a href="/Service" className={`${styles.btn} btn btn-primary`}>
+            Get Started
+          </a>
+        </div>
+      </div>
+
+      {/* Main Image */}
+      {/* <div>
+        <motion.img
+          src={Img5}
+          className={`${styles.cardImgTop} card-img-top`}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1 }}
+          alt="Main Junk Removal Image"
+        />
+      </div> */}
+
+      {/* Services Section */}
       <div className="container my-5">
         <motion.h1
           initial={{ y: -50, opacity: 0 }}
@@ -68,25 +135,8 @@ const Home = () => {
         >
           Our Services
         </motion.h1>
-
-        <div>
-          <motion.img
-            src={Img5}
-            className={`${styles.cardImgTop} card-img-top`}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1 }}
-            alt="Main Junk Removal Image"
-          />
-        </div>
-
         <div className="row mt-4" ref={serviceRef}>
-          {[
-            { name: "Residential Junk Removal", image: Img1 },
-            { name: "Commercial Junk Removal", image: Img2 },
-            { name: "Construction Debris Removal", image: Img3 },
-            { name: "Loved Ones' Estate Junk Removal", image: Img4 },
-          ].map((service, index) => (
+          {[{ name: "Residential Junk Removal", image: Img1 }, { name: "Commercial Junk Removal", image: Img2 }, { name: "Construction Debris Removal", image: Img3 }, { name: "Loved Ones' Estate Junk Removal", image: Img4 }].map((service, index) => (
             <motion.div
               className={`col-md-4 mb-4 ${styles.cardContainer}`}
               key={index}
@@ -119,19 +169,49 @@ const Home = () => {
             </motion.div>
           ))}
         </div>
+      </div>
 
-        <div>
-          <motion.img
-            src={Img6}
-            className={`${styles.cardImgTop} card-img-top`}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1 }}
-            alt="Bottom Junk Removal Image"
-          />
+      {/* Reviews Section */}
+      <div className="container my-5">
+        <motion.h1
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className={styles.sectionTitle}
+        >
+          What Our Customers Are Saying
+        </motion.h1>
+        <div className="row mt-4">
+          {isLoading ? (
+            <p>Loading reviews...</p>
+          ) : reviews.length > 0 ? (
+            reviews.map((review, index) => (
+              <motion.div
+                className="col-md-4 mb-4"
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                <div className={styles.card}>
+                  <div className="card-body">
+                    <h5 className="card-title">{review.author_name}</h5>
+                    <p className="card-text">{review.text}</p>
+                    <div className="d-flex justify-content-between">
+                      <span>Rating: {review.rating}</span>
+                      <span>{new Date(review.time * 1000).toLocaleDateString()}</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))
+          ) : (
+            <p>No reviews found.</p>
+          )}
         </div>
       </div>
 
+      {/* Google Map Embed */}
       <div className="container my-5">
         <motion.h1
           initial={{ y: -50, opacity: 0 }}
@@ -139,57 +219,16 @@ const Home = () => {
           transition={{ duration: 0.5 }}
           className={styles.sectionTitle}
         >
-          How It Works
+          Find Us on the Map
         </motion.h1>
-
-        <p className="lead mt-4">Follow these simple steps to get started:</p>
-        <ul className="list-unstyled">
-          <motion.li
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <strong>1. Schedule a Pickup:</strong> Book a time that works for
-            you, and we'll be there.
-          </motion.li>
-          <motion.li
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <strong>2. Get a Free Estimate:</strong> No hidden fees—just honest,
-            transparent pricing.
-          </motion.li>
-          <motion.li
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <strong>3. We Handle the Rest!</strong> We'll remove the junk and
-            leave your space clean and clear.
-          </motion.li>
-        </ul>
-      </div>
-
-      <div className="container my-5">
-        <motion.h1
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className={styles.sectionTitle}
-        >
-          Local to You in Atlanta
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="lead"
-        >
-          We proudly serve the Atlanta metro area. Wherever you are, we’ll come
-          to you!
-        </motion.p>
+        <div className="embed-responsive embed-responsive-16by9">
+          <iframe
+            className="embed-responsive-item"
+            src={mapUrl}
+            allowFullScreen
+            title="Google Map of Atlanta"
+          ></iframe>
+        </div>
       </div>
     </>
   );
