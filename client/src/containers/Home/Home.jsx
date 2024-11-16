@@ -53,22 +53,22 @@ const Home = () => {
           reviewtrackersReviews,
           bbbReviews,
         ] = await Promise.all([
-          fetch("http://localhost:3001/api/reviews/google").then((res) =>
+          fetch(`${process.env.URL}/api/reviews/google`).then((res) =>
             res.json()
           ),
-          fetch("http://localhost:3001/api/reviews/yelp").then((res) =>
+          fetch(`${process.env.URL}/api/reviews/yelp`).then((res) =>
             res.json()
           ),
-          fetch("http://localhost:3001/api/reviews/trustpilot").then((res) =>
+          fetch(`${process.env.URL}/api/reviews/trustpilot`).then((res) =>
             res.json()
           ),
-          fetch("http://localhost:3001/api/reviews/facebook").then((res) =>
+          fetch(`${process.env.URL}/api/reviews/facebook`).then((res) =>
             res.json()
           ),
-          fetch("http://localhost:3001/api/reviews/reviewtrackers").then(
+          fetch(`${process.env.URL}/api/reviews/reviewtrackers`).then(
             (res) => res.json()
           ),
-          fetch("http://localhost:3001/api/reviews/bbb").then((res) =>
+          fetch(`${process.env.URL}/api/reviews/bbb`).then((res) =>
             res.json()
           ),
         ]);
@@ -96,7 +96,7 @@ const Home = () => {
   useEffect(() => {
     const fetchMapUrl = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/map");
+        const response = await fetch(`${process.env.URL}/api/map`);
         const data = await response.json();
         setMapUrl(data.googleMapsLink); // Set the map iframe URL
       } catch (error) {
