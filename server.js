@@ -8,6 +8,13 @@ const cors = require("cors");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+// Global handler for unhandled promise rejections
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("Unhandled Rejection at:", promise, "reason:", reason);
+  // Uncomment below if you want to terminate the app on unhandled rejections
+  // process.exit(1);
+});
+
 // Enable CORS for your frontend
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
@@ -148,25 +155,46 @@ app.get("/api/reviews/bbb", async (req, res) => {
 });
 
 // Google Map API configuration for embedding map
-app.get("/api/map", (req, res) => {
-  const location = "Atlanta, GA"; // Change the location as needed
+app.get("/api/map", async (req, res) => {
+  const location = "Atlanta, GA"; // You can change this to any location as needed
+  const googleMapsAPIKey = process.env.GOOGLE_MAPS_API_KEY;
+
+  if (!googleMapsAPIKey) {
+    return res.status(500).json({ error: "Google Maps API key is missing" });
+  }
+
   const googleMapsLink = `https://www.google.com/maps/embed/v1/place?q=${encodeURIComponent(
     location
-  )}&key=${process.env.GOOGLE_MAPS_API_KEY}`;
-  res.json({ googleMapsLink });
-});
+  )}&key=${googleMapsAPIKey}`;
 
-app.get("/api/config", (req, res) => {
-  res.json({
-    success: true,
-  });
+  try {
+    // Optionally you can test the link to make sure it's working before sending it to the client
+    // For example, we could make a GET request to the URL to check the response, though it's generally not required.
+    res.json({ googleMapsLink });
+  } catch (error) {
+    console.error("Error fetching map link:", error.message);
+    res.status(500).send("Error generating map link.");
+  }
 });
+// app.get("/api/map", (req, res) => {
+//   const location = "Atlanta, GA"; // Change the location as needed
+//   const googleMapsLink = `https://www.google.com/maps/embed/v1/place?q=${encodeURIComponent(
+//     location
+//   )}&key=${process.env.GOOGLE_MAPS_API_KEY}`;
+//   res.json({ googleMapsLink });
+// });
 
-app.get("/apiFun", (req, res) => {
-  res.send("API FUN");
-  console.log("API works");
-  res.end();
-});
+// app.get("/api/config", (req, res) => {
+//   res.json({
+//     success: true,
+//   });
+// });
+
+// app.get("/apiFun", (req, res) => {
+//   res.send("API FUN");
+//   console.log("API works");
+//   res.end();
+// });
 
 // Serve frontend (React app)
 app.get("*", (req, res) => {
